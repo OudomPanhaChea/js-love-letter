@@ -12,6 +12,7 @@ body {
   height: 100vh;
   background-color: #fce4ec;
   font-family: "Caveat", cursive;
+  overflow: hidden;
 }
 .container {
   /* background-color: rebeccapurple; */
@@ -97,7 +98,7 @@ body {
 .letter {
   position: absolute;
   width: 260px;
-  /* height: 180px; */
+  /* height: 320px; */
   background: white;
   padding: 24px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);

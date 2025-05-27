@@ -51,7 +51,6 @@ envelopeContainerElement.addEventListener("click", () => {
       letterElement.style.transition = "transform 2s ease-in-out";
       letterElement.style.transform = "translateY(-90%)";
       isEnvelopeOpen = true;
-      letterElement.style.transition = "";
     }, 1200);
     
     setTimeout(() => {
@@ -70,11 +69,9 @@ letterElement.addEventListener("mousedown", (event) => {
 
     // Calculate offsets relative to the mouse position
     const rect = letterElement.getBoundingClientRect();
-    const translateYOffset = rect.height * 0.9; // 60% of the letter's height
+    const translateYOffset = rect.height * 0.9; // 90% of the letter's height
     offsetY = event.clientY - (rect.top + translateYOffset);
     offsetX = event.clientX - rect.left; // Horizontal offset
-
-    // Prevent text selection during drag
     document.body.style.userSelect = "none";
   }
 });
@@ -86,7 +83,7 @@ document.addEventListener("mousemove", (event) => {
     let newX = event.clientX - offsetX;
     let newY = event.clientY - offsetY;
 
-    // Apply position using `fixed` positioning for smooth dragging
+    // Apply position using fixed positioning for smooth dragging
     letterElement.style.position = "fixed";
     letterElement.style.left = `${newX}px`;
     letterElement.style.top = `${newY}px`;
@@ -117,7 +114,6 @@ NoBtnElement.addEventListener('click', () => {
   GroupBtnElement.style.gap = `${16 + times*12}px`;
   YesBtnElement.style.transform = `scale(${1+ times/4})`;
   NoBtnElement.style.transform = `scale(${1- times/12})`;
-  console.log(`${16 + times}px`)
 });
 
 YesBtnElement.addEventListener('click', () => {
